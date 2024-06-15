@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EnglishTec" Class="DataEnglishTecDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-POE54R3\TBD_HAJI_22;Initial Catalog=EnglishTec;Integrated Security=True" SettingsObjectName="English_Tec.Properties.Settings" SettingsPropertyName="EnglishTecConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_ActualizarAlumnos" Method="sp_ActualizarAlumnos">
+    <Parameter Name="matricula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pago" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ActualizarCalificacion" Method="sp_ActualizarCalificacion">
+    <Parameter Name="idCalificacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="calificacion" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ActualizarCursoGrupo" Method="sp_ActualizarCursoGrupo">
+    <Parameter Name="idCurso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="horario" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ActualizarEmpleado" Method="sp_ActualizarEmpleado">
+    <Parameter Name="dniEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="puesto" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="sueldoPorHora" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ActualizarExpedienteAlumno" Method="sp_ActualizarExpedienteAlumno">
+    <Parameter Name="idExpedienteAlumno" Type="System.Int32" DbType="Int" />
+    <Parameter Name="códigoPostal" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="numeroTelefonico" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ciudad" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="colonia" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="calle" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="estatus" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ActualizarHorasE_S" Method="sp_ActualizarHorasE_S">
+    <Parameter Name="idHorasTrabajadas" Type="System.Int32" DbType="Int" />
+    <Parameter Name="horaEntrada" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="horaSalida" Type="System.TimeSpan" DbType="Time" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ActualizarMaterial" Method="sp_ActualizarMaterial">
+    <Parameter Name="idMaterial" Type="System.Int32" DbType="Int" />
+    <Parameter Name="costo" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ActualizarNivel" Method="sp_ActualizarNivel">
+    <Parameter Name="idNivel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="costo" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ExpedienteAlumnoInsertar" Method="sp_ExpedienteAlumnoInsertar">
+    <Parameter Name="matricula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fechaIngreso" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="códigoPostal" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="tipoSangre" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="numeroTelefonico" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="ciudad" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="colonia" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="calle" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="estatus" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(60)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertarAlumnos" Method="sp_InsertarAlumnos">
+    <Parameter Name="idNivel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombreAlumno" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="primerApellido" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="segundoApellido" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="NSS" Parameter="nSS" Type="System.String" DbType="Char(11)" />
+    <Parameter Name="CURP" Parameter="cURP" Type="System.String" DbType="Char(18)" />
+    <Parameter Name="pago" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertarCalificaciones" Method="sp_InsertarCalificaciones">
+    <Parameter Name="matricula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCurso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="calificacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="unidad" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertarCursoGrupo" Method="sp_InsertarCursoGrupo">
+    <Parameter Name="dniEmpleado" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="idNivel" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="horario" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertarDepartamento" Method="sp_InsertarDepartamento">
+    <Parameter Name="nombreDepartamento" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="horaEntrada" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="horaSalida" Type="System.TimeSpan" DbType="Time" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertarEmpleado" Method="sp_InsertarEmpleado">
+    <Parameter Name="idDepartamento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="especialidad" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="nombreEmpleado" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="primerApellido" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="segundoApellido" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="puesto" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sueldoPorHora" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="NSS" Parameter="nSS" Type="System.String" DbType="Char(11)" />
+    <Parameter Name="CURP" Parameter="cURP" Type="System.String" DbType="Char(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertarExpedienteEmpleado" Method="sp_InsertarExpedienteEmpleado">
+    <Parameter Name="dniEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fechaIngreso" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="códigoPostal" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="tipoSangre" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="numeroTelefonico" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="ciudad" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="colonia" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="calle" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="estatus" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertarHorasTrabajadas" Method="sp_InsertarHorasTrabajadas">
+    <Parameter Name="horaEntrada" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="horaSalida" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="dniEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="retardo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="retardoJustificado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="horasCubiertas" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertarMaterial" Method="sp_InsertarMaterial">
+    <Parameter Name="nombreMaterial" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="idNivel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="costo" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="autor" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="tipo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertarNivel" Method="sp_InsertarNivel">
+    <Parameter Name="nombreNivel" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="costo" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCantidadMaterial" Method="spCantidadMaterial">
+    <ElementType Name="spCantidadMaterialResult">
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nivel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spHorarioTrabajadorxDepartamento" Method="spHorarioTrabajadorxDepartamento">
+    <ElementType Name="spHorarioTrabajadorxDepartamentoResult">
+      <Column Name="Departamento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Empleado" Type="System.String" DbType="VarChar(61)" CanBeNull="true" />
+      <Column Name="Horario" Type="System.String" DbType="VarChar(81) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spHorarioxDepartamento" Method="spHorarioxDepartamento">
+    <ElementType Name="spHorarioxDepartamentoResult">
+      <Column Name="Departamento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Horario" Type="System.String" DbType="VarChar(81) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spHorasCubiertasTotales" Method="spHorasCubiertasTotales">
+    <ElementType Name="spHorasCubiertasTotalesResult">
+      <Column Name="[Clave de empleado]" Member="Clave_de_empleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Empleado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="[Total horas trabajadas]" Member="Total_horas_trabajadas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spHorasCubietasxDia" Method="spHorasCubietasxDia">
+    <ElementType Name="spHorasCubietasxDiaResult">
+      <Column Name="[Clave de empleado]" Member="Clave_de_empleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Empleado" Type="System.String" DbType="VarChar(61)" CanBeNull="true" />
+      <Column Name="Día" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Horas trabajadas]" Member="Horas_trabajadas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spMaterialCategoría" Method="spMaterialCategoría">
+    <ElementType Name="spMaterialCategoríaResult">
+      <Column Name="Nivel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Nombre del material]" Member="Nombre_del_material" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spMostrarCalificaciones" Method="spMostrarCalificaciones">
+    <Parameter Name="matricula" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spMostrarCalificacionesResult">
+      <Column Name="calificacion" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="unidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spMostrarPersonalxDepartamento" Method="spMostrarPersonalxDepartamento">
+    <ElementType Name="spMostrarPersonalxDepartamentoResult">
+      <Column Name="Clave" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Nombre del departamento]" Member="Nombre_del_departamento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Cantidad de empleados]" Member="Cantidad_de_empleados" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spRegistroCliente" Method="spRegistroCliente">
+    <ElementType Name="spRegistroClienteResult">
+      <Column Name="matricula" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idNivel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombreAlumno" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="primerApellido" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segundoApellido" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NSS" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="CURP" Type="System.String" DbType="Char(18)" CanBeNull="true" />
+      <Column Name="pago" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="idExpedienteAlumno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="matricula1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaIngreso" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="códigoPostal" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="tipoSangre" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="numeroTelefonico" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ciudad" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="colonia" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="calle" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="estatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spReportesdeAdeudo" Method="spReportesdeAdeudo">
+    <ElementType Name="spReportesdeAdeudoResult">
+      <Column Name="nombreAlumno" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="[Precio del Nivel]" Member="Precio_del_Nivel" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="[Precio del material]" Member="Precio_del_material" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Abono" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Restante" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spRetardosGenerales" Method="spRetardosGenerales">
+    <ElementType Name="spRetardosGeneralesResult">
+      <Column Name="[Nombre del Empleado]" Member="Nombre_del_Empleado" Type="System.String" DbType="VarChar(92) NOT NULL" CanBeNull="false" />
+      <Column Name="Retardo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Retardo justificado]" Member="Retardo_justificado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spRetardosJustificadosNoJustificados" Method="spRetardosJustificadosNoJustificados">
+    <ElementType Name="spRetardosJustificadosNoJustificadosResult">
+      <Column Name="[Nombre del Empleado]" Member="Nombre_del_Empleado" Type="System.String" DbType="VarChar(92) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Retardo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[Retardo justificado]" Member="Retardo_justificado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ActualizarExpedienteEmpleado" Method="sp_ActualizarExpedienteEmpleado">
+    <Parameter Name="idExpedienteEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="códigoPostal" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="numeroTelefonico" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ciudad" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="colonia" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="calle" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="estatus" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
